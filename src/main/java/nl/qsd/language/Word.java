@@ -7,12 +7,19 @@ public class Word implements Comparable<Word> {
 
     private final char[] letters;
     
+    private final boolean strict;
+    
     public Word(String word) {
+        this(word, false);
+    }
+    
+    public Word(String word, boolean strict) {
         if (word == null) {
             word = "";
         }
 
         this.word = word;
+        this.strict = strict;
         this.letters = this.word.toCharArray();
     }
 
@@ -40,6 +47,9 @@ public class Word implements Comparable<Word> {
             if (previous > current) {
                 return false;
             }
+            if (strict && previous == current) {
+                return false;
+            }
 
             previous = current;
         }
@@ -54,6 +64,9 @@ public class Word implements Comparable<Word> {
         for (int i = 1; i < letters.length; i++) {
             char current = letters[i];
             if (previous < current) {
+                return false;
+            }
+            if (strict && previous == current) {
                 return false;
             }
 

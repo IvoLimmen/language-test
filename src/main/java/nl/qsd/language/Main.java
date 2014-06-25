@@ -31,7 +31,7 @@ public class Main {
                         this.getClass().getResourceAsStream("/opentaal.txt")))) {
 
             words = reader.lines()
-                    .map(item -> new Word(item))
+                    .map(item -> new Word(item, true))
                     .collect(Collectors.toList());
         }
         
