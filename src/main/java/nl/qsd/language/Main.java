@@ -24,7 +24,7 @@ public class Main {
 
     public void read() throws IOException {        
 
-        List<Word> words = null;
+        List<Word> words;
         
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
