@@ -31,7 +31,7 @@ public class Word implements Comparable<Word> {
         return true;
     }
     
-    public boolean isInOrder() {
+    public boolean isAscendingOrder() {
         
         char previous = letters[0];
 
@@ -47,6 +47,22 @@ public class Word implements Comparable<Word> {
         return true;
     }
 
+    public boolean isDescendingOrder() {
+        
+        char previous = letters[0];
+
+        for (int i = 1; i < letters.length; i++) {
+            char current = letters[i];
+            if (previous < current) {
+                return false;
+            }
+
+            previous = current;
+        }
+
+        return true;
+    }
+    
     @Override
     public String toString() {
         return this.word;
