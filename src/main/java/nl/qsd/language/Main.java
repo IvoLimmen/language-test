@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author Ivo Limmen <ivo.limmen@qsd.nl>
@@ -18,9 +17,11 @@ public class Main {
 
     private int countAscend = 0;
     private int countDescend = 0;
-
+    private int countPalindrome = 0;
+    
     private String longestAscending = "";
     private String longestDescending = "";
+    private String longestPalindrome = "";
 
     public void read() throws IOException {        
 
@@ -56,10 +57,23 @@ public class Main {
                     }
                     System.out.println(item);
                 });
+
+        words.stream().filter(word -> word.length() > 2)
+                .filter(word -> word.isPalindrome())
+                .filter(word -> !word.isAbrivate())
+                .forEach(item -> {
+                    countPalindrome++;
+                    if (item.length() > longestPalindrome.length()) {
+                        longestPalindrome = item.toString();
+                    }
+                    System.out.println(item);
+                });
         
         System.out.println("Words that ascend: " + this.countAscend);
         System.out.println("Words that descend: " + this.countDescend);
+        System.out.println("Words that are palindromes: " + this.countPalindrome);
         System.out.println("Longest ascending word: " + this.longestAscending);
         System.out.println("Longest descening word: " + this.longestDescending);               
+        System.out.println("Longest palindrome word: " + this.longestPalindrome);       
     }
 }

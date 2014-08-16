@@ -76,6 +76,14 @@ public class Word implements Comparable<Word> {
         return true;
     }
     
+    public boolean isPalindrome() {
+        StringBuilder sb = new StringBuilder(this.word.length());
+        sb.append(this.word);
+        sb.reverse();
+        
+        return this.word.equals(sb.toString());
+    }
+    
     @Override
     public String toString() {
         return this.word;
