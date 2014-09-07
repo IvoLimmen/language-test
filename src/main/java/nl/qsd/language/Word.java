@@ -5,6 +5,8 @@ public class Word implements Comparable<Word> {
 
     private final String word;
 
+    private final String originalWord;
+	
     private final char[] letters;
     
     private final boolean strict;
@@ -18,7 +20,8 @@ public class Word implements Comparable<Word> {
             word = "";
         }
 
-        this.word = word;
+		this.originalWord = word;
+        this.word = word.toLowerCase();
         this.strict = strict;
         this.letters = this.word.toCharArray();
     }
@@ -29,7 +32,7 @@ public class Word implements Comparable<Word> {
     
     public boolean isAbrivate() {
 
-        for (char letter : letters) {
+        for (Character letter : originalWord.toCharArray()) {
             if (!Character.isUpperCase(letter)) {
                 return false;
             }
