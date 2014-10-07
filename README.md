@@ -12,6 +12,9 @@ that exist only using consecutive letters from the alphabet? After a long though
 word for Royal.
 Since I wanted to play with JDK 8 and lambda functions I decided to test my theory.
 
+Later on I added some more statistics to the output on the dictionary. Also added a part to show words that can be shown
+on a calculator when it is upside down (Calculator spelling).
+
 Clone and simply execute:
 
     mvn exec:java

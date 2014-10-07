@@ -75,6 +75,11 @@ public class Main {
 						 }
 					  });
 
+			  words.stream().filter(word -> word.isCalculatorSpelling())
+					  .forEach(item -> {
+						 System.out.println("Calculatorspelling: " + item);
+					  });
+			  
 			  System.out.println("Words that ascend: " + this.countAscend);
 			  System.out.println("Words that descend: " + this.countDescend);
 			  System.out.println("Words that are palindromes: " + this.countPalindrome);
