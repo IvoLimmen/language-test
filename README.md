@@ -1,7 +1,6 @@
-language-test
-=============
+# language-test
 
-Java 8 lambda test. Searching words with consecutive letters from the alphabet.
+Lambda test. Searching words with consecutive letters from the alphabet.
 
 The tool has been modified to include both ascending order (i.e. adel) and descending order (i.e. spookje). The logic
 has an option to check loose/strict but there is currently no command line option to change it. Strict means that 
@@ -21,4 +20,12 @@ Clone and simply execute:
 
 To see the result.
 
-Made with help from the dictionary from [OpenTaal](http://www.opentaal.org), ('basis-gekeurd' and 'flexievormen').
+# Puzzle
+
+Because I needed to do this. My wife was given a few T-Shirts with letters on them and she wanted to use it in a quiz. 
+So the question is what word can you make of the T-Shirts. She was given 4 blue and 4 red with different letters on them.
+If you run the Puzzle it will output the list of words that can be found in the Dutch wordlist for each team.
+
+# Credits
+
+Made with help from the dictionary from [OpenTaal](http://www.opentaal.org).

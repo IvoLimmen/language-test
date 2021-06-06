@@ -107,18 +107,9 @@ public class Main {
 			  System.out.println("Total words in collection: " + wordCount);
 			  System.out.println("Average word length: " + (totalLength / wordCount));
 			  System.out.println("Longest word length: " + longestWord);
-
-			  Map<Integer, Long> sortedMap = new TreeMap<>((key1, key2) -> {
-				 Long value1 = counts.containsKey(key1) ? counts.get(key1) : 0l;
-				 Long value2 = counts.containsKey(key2) ? counts.get(key2) : 0l;
-				 				 
-				 return value2.compareTo(value1);
-			  });			  
-			  sortedMap.putAll(counts);
 			  
-			  sortedMap.entrySet().stream().forEach((entry) -> {
+			  counts.entrySet().stream().forEach((entry) -> {
 				 System.out.println(String.format("Words with length %d are counted %d times.", entry.getKey(), entry.getValue()));
-			  });
-			  			  
+			  });			  			  
    }
 }
